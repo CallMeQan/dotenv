@@ -50,6 +50,12 @@ func readFile(filename string) (map[string]string, error) {
 		// Prevented from whitespace bug
 		key := strings.TrimSpace(line[:idx])
 		val := strings.TrimSpace(line[idx+1:])
+
+		if hasQuotePrefix(val) {
+			val = val[1 : len(val)-1]
+		}
+
+		// Push value to map
 		res[key] = val
 	}
 	if err := scanner.Err(); err != nil {

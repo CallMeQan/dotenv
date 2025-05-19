@@ -6,3 +6,14 @@ func getFilenamesOrDefault(filenames []string) []string {
 	}
 	return filenames
 }
+func hasQuotePrefix(str string) bool {
+	if len(str) == 0 {
+		return false
+	}
+	switch str[0] {
+	case '"', '\'':
+		return true
+	default:
+		return false
+	}
+}

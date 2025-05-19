@@ -9,6 +9,5 @@ Another **minimal** dotenv library, aim for **fast, small and instant break** if
 
 ### Future plan
 
-- Support quoted value
 - Support multi-line value
 - Improve reader
